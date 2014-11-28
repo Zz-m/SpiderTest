@@ -5,45 +5,50 @@ import java.util.Set;
 
 public class LinkQueue {
 	
-	//ÒÑ·ÃÎÊurl¼¯ºÏ
+	//å·²è®¿é—®urlé›†åˆ
 	private static Set<String> visitedUrl = new HashSet<String>();
 	
-	//´ı·ÃÎÊurl¼¯ºÏ
+	//å¾…è®¿é—®urlé›†åˆ
 	private static Queue unVisitedUrl = new Queue();
 	
-	//»ñµÃurl¶ÓÁĞ
+	//è·å¾—urlé˜Ÿåˆ—
 	public static Queue getUnVisitedUrl() {
 		return unVisitedUrl;
 	}
 	
-	//Ìí¼Óµ½·ÃÎÊ¹ıµÄurlÖĞ
+	//æ·»åŠ åˆ°è®¿é—®è¿‡çš„urlä¸­
 	public static void addVisitedUrl(String url) {
 		visitedUrl.add(url);
 	}
 	
-	//ÒÆ³ı·ÃÎÊ¹ıµÄurl
+	//ç§»é™¤è®¿é—®è¿‡çš„url
 	public static void removeVisitedUrl(String url) {
 		visitedUrl.remove(url);
 	}
 	
-	//Î´·ÃÎÊµÄurl³ö¶ÓÁĞ
+	//æœªè®¿é—®çš„urlå‡ºé˜Ÿåˆ—
 	public static Object unVisitedUrlDeQueue() {
 		return unVisitedUrl.deQueue();
 	}
 	
-	//±£Ö¤Ã¿¸öurlÖ»±»·ÃÎÊÒ»´Î
+	//ä¿è¯æ¯ä¸ªurlåªè¢«è®¿é—®ä¸€æ¬¡
 	public static void addUnVisitedUrl(String url) {
 		if(url != null && !url.trim().equals("") && !visitedUrl.contains(url) && !unVisitedUrl.contains(url)) {
 			unVisitedUrl.enQueue(url);
 		}
 	}
 	
-	//»ñÈ¡ÒÑ·ÃÎÊurlÊıÄ¿
+	//è·å–å·²è®¿é—®urlæ•°ç›®
 	public static int getVisitedUrlNum() {
 		return visitedUrl.size();
 	}
 	
-	//ÅĞ¶ÏÎ´·ÃÎÊurl¶ÓÁĞÊÇ·ñÎª¿Õ
+	//è·å–å¾…è®¿é—®urlæ•°ç›®
+	public static int getUnVisitedUrlNum() {
+		return unVisitedUrl.size();
+	}
+	
+	//åˆ¤æ–­æœªè®¿é—®urlé˜Ÿåˆ—æ˜¯å¦ä¸ºç©º
 	public static boolean unVisitedUrlEmpty() {
 		return unVisitedUrl.isEmpty();
 	}

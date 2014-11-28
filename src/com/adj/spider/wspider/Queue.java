@@ -4,26 +4,31 @@ import java.util.LinkedList;
 
 public class Queue {
 
-	//Á´±íÊµÏÖ¶ÓÁĞ
+	//é“¾è¡¨å®ç°é˜Ÿåˆ—
 	private LinkedList queue = new LinkedList();
 	
-	//Èë¶ÓÁĞ
+	//å…¥é˜Ÿåˆ—
 	public void enQueue (Object t) {
 		queue.addLast(t);
 	}
 	
-	//³ö¶ÓÁĞ
+	//å‡ºé˜Ÿåˆ—
 	public Object deQueue() {
 		return queue.removeFirst();
 	}
 	
-	//ÅĞ¶Ï¶ÓÁĞÊÇ·ñÎª¿Õ
+	//åˆ¤æ–­é˜Ÿåˆ—æ˜¯å¦ä¸ºç©º
 	public boolean isEmpty() {
 		return queue.isEmpty();
 	}
 	
-	//ÅĞ¶Ï¶ÓÁĞÊÇ·ñ°üº¬t
+	//åˆ¤æ–­é˜Ÿåˆ—æ˜¯å¦åŒ…å«t
 	public boolean contains(Object t) {
 		return queue.contains(t);
+	}
+	
+	//è¿”å›é˜Ÿåˆ—ä¸­å…ƒç´ ä¸ªæ•°
+	public int size() {
+		return queue.size();
 	}
 }

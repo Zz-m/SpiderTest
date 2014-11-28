@@ -5,6 +5,11 @@ import java.util.PriorityQueue;
 import java.util.Queue;
 import java.util.Set;
 
+/**
+ * 偏好爬虫，PriorityQueue实现
+ * @author adj
+ *
+ */
 public class LinkQueue {
 	private static Set<String> visitedUrl = new HashSet<String>();
 	private static Queue<String> unVisitedUrl = new PriorityQueue<String>();
