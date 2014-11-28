@@ -6,12 +6,13 @@ import java.security.NoSuchAlgorithmException;
 public class MD5 {
 	public static String getMD5(byte[] source) {
 		String s = null;
-		char[] hexDigits = {'0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'a', 'b', 'c', 'd', 'e', 'f'};
+		char[] hexDigits = { '0', '1', '2', '3', '4', '5', '6', '7', '8', '9',
+				'a', 'b', 'c', 'd', 'e', 'f' };
 		try {
 			MessageDigest md = MessageDigest.getInstance("MD5");
 			md.update(source);
 			byte[] tmp = md.digest();
-			
+
 			char[] str = new char[16 * 2];
 			int k = 0;
 			for (int i = 0; i < 16; i++) {
@@ -26,9 +27,9 @@ public class MD5 {
 		}
 		return s;
 	}
-	
+
 	public static void main(String[] args) {
-		byte[] a = {'2', '3', '4', '5', '6', '7', '8'};
+		byte[] a = { '2', '3', '4', '5', '6', '7', '8' };
 		String s = getMD5(a);
 		System.out.println(s);
 	}
