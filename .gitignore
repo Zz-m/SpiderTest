@@ -24,3 +24,11 @@ local.properties
 
 # PDT-specific
 .buildpath
+
+# Intellij project files
+*.iml
+*.ipr
+*.iws
+.idea/
+
+lint.xml
